@@ -1,0 +1,15 @@
+
+DELETE FROM Alarms;
+DELETE FROM Rules;
+DELETE FROM Parameters;
+DELETE FROM Devices;
+
+-- Insert a single device
+INSERT INTO Devices (Id, Name, Description, Inhibit, DeviceType) VALUES
+  ('22222222-2222-2222-2222-222222222222', 'Pump-1', 'Main process pump', 0, 'Pump');
+-- Insert a single parameter for the device
+INSERT INTO Parameters (Id, DeviceId, Name, CurrentValue, Unit) VALUES
+  ('33333333-3333-3333-3333-333333333333', '22222222-2222-2222-2222-222222222222', 'Pressure', 2.5, 'bar');
+-- Insert a single rule for the parameter
+INSERT INTO Rules (Id, ParameterId, WorkflowName, Expression, Severity, Priority, Description, RecommendedAction, ComparisonType, Max, Min, Name) VALUES
+  ('44444444-4444-4444-4444-444444444444', '33333333-3333-3333-3333-333333333333', 'PumpPressure', 'input1 > 3', 'High', 1, 'High pressure in pump', 'Check relief valve', 'GreaterThan', NULL, 3.0, 'HighPressure') ;

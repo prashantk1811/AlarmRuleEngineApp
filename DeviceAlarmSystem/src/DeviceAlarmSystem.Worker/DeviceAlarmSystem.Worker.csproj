@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DependencyInjection.AutoRegistration" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0-rc.2.25502.107" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeviceAlarmSystem.Core\DeviceAlarmSystem.Core.csproj" />
+    <ProjectReference Include="..\DeviceAlarmSystem.Infrastructure\DeviceAlarmSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\DeviceAlarmSystem.RuleEngine\DeviceAlarmSystem.RuleEngine.csproj" />
+  </ItemGroup>
+</Project>
