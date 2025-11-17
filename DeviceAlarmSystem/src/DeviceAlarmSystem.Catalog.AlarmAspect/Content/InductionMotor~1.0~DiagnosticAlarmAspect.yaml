@@ -1,0 +1,29 @@
+!diagnosticAlarmAspect
+deviceProfile:
+  id: 22222222-2222-2222-2222-222222222222
+  name: InductionMotor-1
+  description: Conveyor induction motor
+  inhibit: 0
+  type: Motor
+  port: 5044
+  manufacturer: ExampleMotors
+  serialNumber: IM-2025-0001
+  diagnosticProfile:
+    - diagnosticProtocol: EcoRT
+      diagnosticResources:
+        - id: R-HC-001
+          name: HighCurrent
+          description: High current in motor
+          severity: High
+          priority: 1
+          recommendedAction: Inspect motor
+          message: Alarm for high current
+          rule:
+            name: HighCurrent
+            comparisonType: GreaterThan
+            expression: Current > 12
+          parameter:
+            id: P-CUR-001
+            name: Current
+            unit: A
+            key: [mib, device.current.value]

@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>..\..\..\build</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.1.0" />

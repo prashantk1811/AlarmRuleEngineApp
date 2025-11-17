@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>DeviceAlarmSystem.DeviceMonitoring</AssemblyName>
+    <RootNamespace>DeviceAlarmSystem.DeviceMonitoring</RootNamespace>
+    <BaseOutputPath>..\..\..\build</BaseOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MQTTnet" Version="4.3.7.1207" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeviceAlarmSystem.Core\DeviceAlarmSystem.Core.csproj" />
+  </ItemGroup>
+</Project>

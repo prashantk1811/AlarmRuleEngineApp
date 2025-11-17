@@ -1,0 +1,45 @@
+!diagnosticAlarmAspect
+deviceProfile:
+  id: 11111111-1111-1111-1111-111111111111
+  name: FeedPump-1
+  description: Main process feed pump
+  inhibit: 0
+  type: Pump
+  port: 5044
+  manufacturer: ExampleCorp
+  serialNumber: FP-2025-0001
+  diagnosticProfile:
+    - diagnosticProtocol: EcoRT
+      diagnosticResources:
+        - id: R-HP-001
+          name: HighPressure
+          description: High pressure in pump
+          severity: High
+          priority: 1
+          recommendedAction: Check relief valve
+          message: Alarm for high pressure
+          rule:
+            name: HighPressure
+            comparisonType: GreaterThan
+            expression: Pressure > 3
+          parameter:
+            id: P-PR-001
+            name: Pressure
+            unit: bar
+            key: [mib, device.pressure.value]
+        - id: R-HT-001
+          name: HighTemp
+          description: High temperature in pump
+          severity: High
+          priority: 1
+          recommendedAction: Check cooling system
+          message: Alarm for high temperature
+          rule:
+            name: HighTemp
+            comparisonType: GreaterThan
+            expression: Temperature > 70
+          parameter:
+            id: P-TEMP-001
+            name: Temperature
+            unit: C
+            key: [mib, device.temperature.value]

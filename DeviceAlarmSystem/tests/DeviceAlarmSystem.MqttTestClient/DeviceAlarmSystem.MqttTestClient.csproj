@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>DeviceAlarmSystem.MqttTestClient</AssemblyName>
+    <RootNamespace>DeviceAlarmSystem.MqttTestClient</RootNamespace>
+    <BaseOutputPath>..\..\..\build</BaseOutputPath>
+    <StartupObject>DeviceAlarmSystem.MqttTestClient.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MQTTnet" Version="4.3.7.1207" />
+  </ItemGroup>
+
+  <!-- Build configurations for different entry points -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Publisher'">
+    <StartupObject>DeviceAlarmSystem.MqttTestClient.Publisher</StartupObject>
+    <AssemblyName>MqttPublisher</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Subscriber'">
+    <StartupObject>DeviceAlarmSystem.MqttTestClient.Subscriber</StartupObject>
+    <AssemblyName>MqttSubscriber</AssemblyName>
+  </PropertyGroup>
+
+</Project>

@@ -2,6 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>..\..\..\build</BaseOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DependencyInjection.AutoRegistration" Version="3.0.0" />
@@ -14,5 +16,6 @@
     <ProjectReference Include="..\DeviceAlarmSystem.Core\DeviceAlarmSystem.Core.csproj" />
     <ProjectReference Include="..\DeviceAlarmSystem.Infrastructure\DeviceAlarmSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\DeviceAlarmSystem.RuleEngine\DeviceAlarmSystem.RuleEngine.csproj" />
+    <ProjectReference Include="..\DeviceAlarmSystem.DeviceMonitoring\DeviceAlarmSystem.DeviceMonitoring.csproj" />
   </ItemGroup>
 </Project>

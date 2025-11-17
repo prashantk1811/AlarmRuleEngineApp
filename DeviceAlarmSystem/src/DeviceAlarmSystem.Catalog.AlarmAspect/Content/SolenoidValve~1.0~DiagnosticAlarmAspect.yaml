@@ -1,0 +1,29 @@
+!diagnosticAlarmAspect
+deviceProfile:
+  id: 33333333-3333-3333-3333-333333333333
+  name: SolenoidValve-1
+  description: Intake solenoid valve
+  inhibit: 0
+  type: Valve
+  port: 5044
+  manufacturer: ExampleValves
+  serialNumber: SV-2025-0001
+  diagnosticProfile:
+    - diagnosticProtocol: EcoRT
+      diagnosticResources:
+        - id: R-LP-001
+          name: LowPosition
+          description: Valve not fully open
+          severity: Low
+          priority: 3
+          recommendedAction: Check actuator
+          message: Alarm for low valve position
+          rule:
+            name: LowPosition
+            comparisonType: LessThan
+            expression: Position < 90
+          parameter:
+            id: P-POS-001
+            name: Position
+            unit: %
+            key: [mib, device.position.value]

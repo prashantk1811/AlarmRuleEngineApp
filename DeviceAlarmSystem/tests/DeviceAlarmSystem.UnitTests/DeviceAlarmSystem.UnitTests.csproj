@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
+    <BaseOutputPath>..\..\..\build</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="8.8.0" />
@@ -11,8 +12,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DeviceAlarmSystem.Catalog.AlarmAspect\DeviceAlarmSystem.Catalog.AlarmAspect.csproj" />
     <ProjectReference Include="..\..\src\DeviceAlarmSystem.Core\DeviceAlarmSystem.Core.csproj" />
     <ProjectReference Include="..\..\src\DeviceAlarmSystem.Infrastructure\DeviceAlarmSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\DeviceAlarmSystem.RuleEngine\DeviceAlarmSystem.RuleEngine.csproj" />

@@ -11,7 +11,12 @@ namespace DeviceAlarmSystem.Core.Entities
         // Rule criteria
         public double? Min { get; set; }
         public double? Max { get; set; }
-    public string? ComparisonType { get; set; } // e.g., "GreaterThan", "LessThan", "Range"
+        public string? ComparisonType { get; set; } // e.g., "GreaterThan", "LessThan", "Range"
+
+        /// <summary>
+        /// Custom rule expression (e.g., "input1 > 10 && input2 < 5")
+        /// </summary>
+        public string? Expression { get; set; }
 
         // Foreign Key
         public Guid ParameterId { get; set; }
